@@ -7,7 +7,7 @@ public class IntList {
 	
 	/**
 	 * @invar | elements != null
-	 * @invar | Arrays.stream(elements).allMatch(e -> e != null)
+	 * 
 	 * @representationObject
 	 */
 	private int[] elements; 
@@ -18,6 +18,9 @@ public class IntList {
 	
 	public int length() {return elements.length;}
 	
+	/**
+	 * @pre | 0 <= index && index < getArray().length
+	 */
 	public int atIndex(int index) {return elements[index];}
 	
 	/**
@@ -25,17 +28,21 @@ public class IntList {
 	 */
 	public int[] getArray() {return elements.clone();}
 	
+	/**
+	 * @mutates | this
+	 */
 	public void append(int number) {
-		
 		int[] result = new int[this.elements.length+1];
 		for (int i = 0; i < this.elements.length; i++) {
 			result[i] = this.elements[i];
 		}
 		result[result.length-1] = number;
 		this.elements = result;
-		
 	}
 	
+	/**
+	 * @mutates | this
+	 */
 	public void remove() {
 		int[] result = new int[elements.length-1];
 		for (int i = 0; i < elements.length-1; i++) {
