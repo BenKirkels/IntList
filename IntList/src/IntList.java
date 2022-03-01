@@ -24,6 +24,8 @@ public class IntList {
 	public int atIndex(int index) {return elements[index];}
 	
 	/**
+	 * @post | result != null
+	 *
 	 * @creates | result
 	 */
 	public int[] getArray() {return elements.clone();}
