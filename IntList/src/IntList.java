@@ -29,6 +29,8 @@ public class IntList {
 	public int[] getArray() {return elements.clone();}
 	
 	/**
+	 * @post | getArray().length == old(getArray().length) + 1 
+	 *  
 	 * @mutates | this
 	 */
 	public void append(int number) {
@@ -41,6 +43,8 @@ public class IntList {
 	}
 	
 	/**
+	 * @post | getArray().length == old(getArray().length) - 1 
+	 * 
 	 * @mutates | this
 	 */
 	public void remove() {
